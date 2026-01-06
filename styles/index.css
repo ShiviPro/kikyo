@@ -1,0 +1,8 @@
+footer a {
+  color: var(--bs-secondary-color);
+}
+
+#formFilter,
+#formSorting {
+  width: initial;
+}
