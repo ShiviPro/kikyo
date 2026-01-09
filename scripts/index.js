@@ -75,11 +75,12 @@ const months = [
   "Dec",
 ];
 
-formData.map((currFormData) => {
-  const lastOpenedAt = currFormData.lastOpenedAt;
-  const currForm = document.createElement("div");
-  currForm.classList.add("col-3");
-  currForm.innerHTML = `
+const displayAllForms = (formData) => {
+  formData.map((currFormData) => {
+    const lastOpenedAt = currFormData.lastOpenedAt;
+    const currForm = document.createElement("div");
+    currForm.classList.add("col-3");
+    currForm.innerHTML = `
     <section class="card">
       <img
         src=${currFormData.thumbnailImgSrc}
@@ -89,10 +90,13 @@ formData.map((currFormData) => {
       <div class="card-body">
         <h6 class="card-title">${currFormData.title}</h6>
         <small class="card-text">${lastOpenedAt.getDate()} ${
-    months[lastOpenedAt.getMonth()]
-  } ${lastOpenedAt.getFullYear()}</small>
+      months[lastOpenedAt.getMonth()]
+    } ${lastOpenedAt.getFullYear()}</small>
       </div>
     </section>
   `;
-  allFormsContainer.appendChild(currForm);
-});
+    allFormsContainer.appendChild(currForm);
+  });
+};
+
+displayAllForms(formData);
