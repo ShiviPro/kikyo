@@ -59,6 +59,8 @@ const formData = [
   },
 ];
 
+const currUserMailId = "jane.doe@gmail.com";
+
 const months = [
   "Jan",
   "Feb",
@@ -76,6 +78,9 @@ const months = [
 let currView = "grid";
 const allFormsContainer = document.getElementById("allFormsContainer");
 const viewToggle = document.getElementById("viewToggle");
+const formFilter = document.getElementById("formFilter");
+let currFilter = formFilter.value;
+let filteredFormData = JSON.parse(JSON.stringify(formData)); // creating a deep copy of the original form data
 
 const displayAllFormsInGrid = (formData) => {
   viewToggle.innerHTML = `<i class="fa-solid fa-list"></i>`;
@@ -84,7 +89,7 @@ const displayAllFormsInGrid = (formData) => {
   allForms.classList.add("row");
 
   formData.map((currFormData) => {
-    const lastOpenedAt = currFormData.lastOpenedAt;
+    const lastOpenedAt = new Date(currFormData.lastOpenedAt);
     const currForm = document.createElement("div");
     currForm.classList.add("col-3");
     currForm.innerHTML = `
@@ -128,7 +133,7 @@ const displayAllFormsInList = (formData) => {
       </tr>
     </thead>`;
   formData.map((currFormData) => {
-    const lastOpenedAt = currFormData.lastOpenedAt;
+    const lastOpenedAt = new Date(currFormData.lastOpenedAt);
     allForms.innerHTML += `
       <tbody>
         <tr>
@@ -171,10 +176,38 @@ viewToggle.addEventListener("click", () => {
   currView = currView === "grid" ? "list" : "grid";
 
   currView === "grid"
-    ? displayAllFormsInGrid(formData)
-    : displayAllFormsInList(formData);
+    ? displayAllFormsInGrid(filteredFormData)
+    : displayAllFormsInList(filteredFormData);
 });
 
 currView === "grid"
-  ? displayAllFormsInGrid(formData)
-  : displayAllFormsInList(formData);
+  ? displayAllFormsInGrid(filteredFormData)
+  : displayAllFormsInList(filteredFormData);
+
+formFilter.addEventListener("change", () => {
+  currFilter = formFilter.value;
+
+  switch (currFilter) {
+    case "Owned by anyone":
+      filteredFormData = JSON.parse(JSON.stringify(formData)); // deep copy
+      break;
+    case "Owned by me":
+      filteredFormData = formData.filter((currForm) =>
+        currForm.owners.find((currOwner) => currOwner.mailId === currUserMailId)
+          ? currForm
+          : false
+      );
+      break;
+    case "Not owned by me":
+      filteredFormData = formData.filter((currForm) =>
+        currForm.owners.find((currOwner) => currOwner.mailId === currUserMailId)
+          ? false
+          : currForm
+      );
+      break;
+  }
+
+  currView === "grid"
+    ? displayAllFormsInGrid(filteredFormData)
+    : displayAllFormsInList(filteredFormData);
+});
