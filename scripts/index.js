@@ -129,8 +129,12 @@ const displayAllFormsInList = (formData) => {
           <td class="d-flex align-items-center py-3">
             <i class="fa-solid fa-list mt-1"></i>
             <h6 class="ms-5 me-3 mb-1 mt-1">${currFormData.title}</h6>
-            <i class="fa-solid fa-user-group text-secondary"></i>
-          </td>
+            ${
+              currFormData.owners.length > 1
+                ? "<i class='fa-solid fa-user-group text-secondary'></i>"
+                : ""
+            }
+            </td>
           <td class="align-middle">${currFormData.owners
             .map((currOwner) => currOwner.mailId.split("@")[0])
             .join(", ")}</td>
