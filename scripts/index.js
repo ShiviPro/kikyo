@@ -168,16 +168,7 @@ const displayAllFormsInList = (formData) => {
 };
 
 viewToggle.addEventListener("click", () => {
-  currView === "grid" ? "list" : "grid";
-
-  switch (currView) {
-    case "grid":
-      currView = "list";
-      break;
-    default:
-      currView = "grid";
-      break;
-  }
+  currView = currView === "grid" ? "list" : "grid";
 
   currView === "grid"
     ? displayAllFormsInGrid(formData)
