@@ -98,7 +98,13 @@ const displayAllFormsInGrid = (formData) => {
         <h6 class="card-title">${currFormData.title}</h6>
         <small class="card-text">${lastOpenedAt.getDate()} ${
       months[lastOpenedAt.getMonth()]
-    } ${lastOpenedAt.getFullYear()}</small>
+    } ${
+      lastOpenedAt.getFullYear() +
+      " at " +
+      lastOpenedAt.getHours() +
+      ":" +
+      lastOpenedAt.getMinutes()
+    }</small>
       </div>
     </section>
   `;
@@ -140,7 +146,13 @@ const displayAllFormsInList = (formData) => {
             .join(", ")}</td>
           <td class="align-middle">${lastOpenedAt.getDate()} ${
       months[lastOpenedAt.getMonth()]
-    } ${lastOpenedAt.getFullYear()}</td>
+    } ${
+      lastOpenedAt.getFullYear() +
+      " at " +
+      lastOpenedAt.getHours() +
+      ":" +
+      lastOpenedAt.getMinutes()
+    }</td>
           <td class="align-middle">
             <button
               class="btn btn-outline-secondary rounded-circle border-0 px-3"
