@@ -119,32 +119,34 @@
           </div>
         </div>
       </section>
-      <section class="container p-4">
-        <div class="d-flex justify-content-between">
-          <h5 class="mb-4">Recent Forms</h5>
+      <section>
+        <div class="container p-4">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-4">Recent Forms</h5>
 
-          <div class="d-flex">
-            <button class="btn btn-secondary">
-              <i class="fa-solid fa-list"></i>
-            </button>
-            <select name="" id="formFilter" class="form-select ms-3">
-              <option value="Owned by anyone">Owned by anyone</option>
-              <option value="Owned by me">Owned by me</option>
-              <option value="Not owned by me">Not owned by me</option>
-            </select>
-            <select name="" id="formSorting" class="form-select ms-3">
-              <option value="Last modified by me">Last modified by me</option>
-              <option value="Last opened by me">Last opened by me</option>
-              <option value="Last modified">Last modified</option>
-              <option value="Title">Title</option>
-            </select>
-            <button class="btn btn-primary ms-3">
-              <i class="fa-regular fa-folder"></i>
-            </button>
+            <div class="d-flex">
+              <button class="btn btn-secondary" id="viewToggle">
+                <i class="fa-solid fa-list"></i>
+              </button>
+              <select name="" id="formFilter" class="form-select ms-3">
+                <option value="Owned by anyone">Owned by anyone</option>
+                <option value="Owned by me">Owned by me</option>
+                <option value="Not owned by me">Not owned by me</option>
+              </select>
+              <select name="" id="formSorting" class="form-select ms-3">
+                <option value="Last modified by me">Last modified by me</option>
+                <option value="Last opened by me">Last opened by me</option>
+                <option value="Last modified">Last modified</option>
+                <option value="Title">Title</option>
+              </select>
+              <button class="btn btn-primary ms-3">
+                <i class="fa-regular fa-folder"></i>
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="row pt-2" id="allFormsContainer"></div>
+        <div class="container p-2" id="allFormsContainer"></div>
       </section>
     </main>
     <footer class="bg-body-secondary container-fluid p-3 mt-5">
