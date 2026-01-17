@@ -83,6 +83,14 @@ let currFilter = formFilter.value;
 let filteredFormData = JSON.parse(JSON.stringify(formData)); // creating a deep copy of the original form data
 const formSorting = document.getElementById("formSorting");
 let currSorting = formSorting.value;
+const formSearchBox = document.getElementById("formSearchBox");
+let currFormSearch = formSearchBox.value.toString().trim();
+const formSearchBtn = document.getElementById("formSearchBtn");
+const formSearchResetBtn = document.getElementById("formSearchResetBtn");
+formSearchResetBtn.classList.add("d-none");
+formSearchBtn.classList.add("rounded-end");
+const formTemplates = document.getElementById("formTemplates");
+const exitSearchBtn = document.getElementById("exitSearchBtn");
 
 const displayAllFormsInGrid = (formData) => {
   viewToggle.innerHTML = `<i class="fa-solid fa-list"></i>`;
@@ -305,6 +313,47 @@ const formSortHandler = () => {
     : displayAllFormsInList(filteredFormData);
 };
 
+const formSearchHandler = () => {
+  if (currFormSearch) {
+    filteredFormData = filteredFormData.filter((currForm) =>
+      currForm.title
+        .toString()
+        .toLowerCase()
+        .includes(currFormSearch.toLowerCase())
+    );
+
+    formSearchBtn.classList.add("d-none");
+    formSearchBox.setAttribute("disabled", true);
+    formTemplates.classList.add("d-none");
+    document.querySelector("footer").classList.add("d-none");
+    formSearchResetBtn.classList.remove("d-none");
+    exitSearchBtn.classList.remove("d-none");
+
+    formSortHandler();
+  }
+
+  currView === "grid"
+    ? displayAllFormsInGrid(filteredFormData)
+    : displayAllFormsInList(filteredFormData);
+};
+
+const resetFormSearch = () => {
+  formSearchBox.value = "";
+  currFormSearch = "";
+
+  filteredFormData = JSON.parse(JSON.stringify(formData));
+
+  currView === "grid"
+    ? displayAllFormsInGrid(filteredFormData)
+    : displayAllFormsInList(filteredFormData);
+
+  formSearchBtn.classList.remove("d-none");
+  formSearchBox.removeAttribute("disabled");
+  formSearchResetBtn.classList.add("d-none");
+
+  formSortHandler();
+};
+
 formSortHandler();
 
 viewToggle.addEventListener("click", () => {
@@ -352,4 +401,18 @@ formFilter.addEventListener("change", () => {
 formSorting.addEventListener("change", (event) => {
   currSorting = event.target.value;
   formSortHandler();
+});
+
+formSearchBox.addEventListener("change", (event) => {
+  currFormSearch = event.target.value.toString().trim();
+  formSearchHandler();
+});
+
+formSearchResetBtn.addEventListener("click", resetFormSearch);
+
+exitSearchBtn.addEventListener("click", () => {
+  formTemplates.classList.remove("d-none");
+  document.querySelector("footer").classList.remove("d-none");
+  exitSearchBtn.classList.add("d-none");
+  resetFormSearch();
 });
