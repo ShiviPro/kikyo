@@ -81,6 +81,8 @@ const viewToggle = document.getElementById("viewToggle");
 const formFilter = document.getElementById("formFilter");
 let currFilter = formFilter.value;
 let filteredFormData = JSON.parse(JSON.stringify(formData)); // creating a deep copy of the original form data
+const formSorting = document.getElementById("formSorting");
+let currSorting = formSorting.value;
 
 const displayAllFormsInGrid = (formData) => {
   viewToggle.innerHTML = `<i class="fa-solid fa-list"></i>`;
@@ -172,6 +174,139 @@ const displayAllFormsInList = (formData) => {
   allFormsContainer.appendChild(allForms);
 };
 
+const formSortHandler = () => {
+  switch (currSorting) {
+    case "Last modified by me":
+      filteredFormData.sort((formOne, formTwo) => {
+        if (
+          formOne.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          ) &&
+          formTwo.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          )
+        ) {
+          const formOneLastMod = new Date(
+            formOne.owners.find(
+              (currOwner) => currOwner.mailId === currUserMailId
+            ).lastModifiedAt
+          );
+
+          const formTwoLastMod = new Date(
+            formTwo.owners.find(
+              (currOwner) => currOwner.mailId === currUserMailId
+            ).lastModifiedAt
+          );
+
+          return formOneLastMod.valueOf() > formTwoLastMod.valueOf()
+            ? -1
+            : formTwoLastMod.valueOf() > formOneLastMod.valueOf()
+            ? +1
+            : NaN;
+        } else if (
+          formOne.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          ) &&
+          formTwo.owners.find(
+            (currOwner) => currOwner.mailId !== currUserMailId
+          )
+        ) {
+          return -1;
+        } else if (
+          formOne.owners.find(
+            (currOwner) => currOwner.mailId !== currUserMailId
+          ) &&
+          formTwo.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          )
+        ) {
+          return +1;
+        } else return NaN;
+      });
+      break;
+    case "Last opened by me":
+      filteredFormData.sort((formOne, formTwo) => {
+        if (
+          formOne.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          ) &&
+          formTwo.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          )
+        ) {
+          const formOneLastOpen = new Date(
+            formOne.owners.find(
+              (currOwner) => currOwner.mailId === currUserMailId
+            ).lastOpenedAt
+          );
+
+          const formTwoLastOpen = new Date(
+            formTwo.owners.find(
+              (currOwner) => currOwner.mailId === currUserMailId
+            ).lastOpenedAt
+          );
+
+          return formOneLastOpen.valueOf() > formTwoLastOpen.valueOf()
+            ? -1
+            : formTwoLastOpen.valueOf() > formOneLastOpen.valueOf()
+            ? +1
+            : NaN;
+        } else if (
+          formOne.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          ) &&
+          formTwo.owners.find(
+            (currOwner) => currOwner.mailId !== currUserMailId
+          )
+        ) {
+          return -1;
+        } else if (
+          formOne.owners.find(
+            (currOwner) => currOwner.mailId !== currUserMailId
+          ) &&
+          formTwo.owners.find(
+            (currOwner) => currOwner.mailId === currUserMailId
+          )
+        ) {
+          return +1;
+        } else return NaN;
+      });
+
+      break;
+    case "Last modified":
+      filteredFormData.sort((formOne, formTwo) => {
+        const formOneLastMod = new Date(formOne.lastModifiedAt);
+        const formTwoLastMod = new Date(formTwo.lastModifiedAt);
+
+        return formOneLastMod.valueOf() > formTwoLastMod.valueOf()
+          ? -1
+          : formTwoLastMod.valueOf() > formOneLastMod.valueOf()
+          ? +1
+          : NaN;
+      });
+
+      break;
+    case "Title":
+      filteredFormData.sort((formOne, formTwo) => {
+        const formOneTitle = formOne.title.toLowerCase();
+        const formTwoTitle = formTwo.title.toLowerCase();
+
+        return formOneTitle === formTwoTitle
+          ? NaN
+          : formOneTitle > formTwoTitle
+          ? +1
+          : -1;
+      });
+      break;
+  }
+
+  currView === "grid"
+    ? displayAllFormsInGrid(filteredFormData)
+    : displayAllFormsInList(filteredFormData);
+};
+
+formSortHandler();
+
 viewToggle.addEventListener("click", () => {
   currView = currView === "grid" ? "list" : "grid";
 
@@ -207,7 +342,14 @@ formFilter.addEventListener("change", () => {
       break;
   }
 
+  formSortHandler();
+
   currView === "grid"
     ? displayAllFormsInGrid(filteredFormData)
     : displayAllFormsInList(filteredFormData);
+});
+
+formSorting.addEventListener("change", (event) => {
+  currSorting = event.target.value;
+  formSortHandler();
 });
