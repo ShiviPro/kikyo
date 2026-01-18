@@ -57,6 +57,173 @@ const formData = [
     ],
     content: `All form data in Markdown format`,
   },
+  {
+    id: 3,
+    title: "Form by Trinity",
+    thumbnailImgSrc: "/images/filled-form.png",
+    createdBy: {
+      mailId: "trinity@gmail.com",
+    },
+    createdAt: new Date(2026, 0, 6, 14, 22, 52),
+    lastModifiedAt: new Date(2026, 0, 10, 9, 25, 45),
+    lastOpenedAt: new Date(2026, 0, 13, 22, 10, 10),
+    owners: [
+      {
+        mailId: "trinity@gmail.com",
+        lastModifiedAt: new Date(2026, 0, 10, 9, 25, 45),
+        lastOpenedAt: new Date(2026, 0, 13, 22, 10, 10),
+      },
+      {
+        mailId: "jane.doe@gmail.com",
+        lastModifiedAt: new Date(2026, 0, 7, 9, 25, 45),
+        lastOpenedAt: new Date(2026, 0, 12, 22, 10, 10),
+      },
+    ],
+    viewers: [
+      {
+        mailId: "john.doe@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 13, 17, 46, 12),
+      },
+      {
+        mailId: "neo@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 11, 19, 25, 42),
+      },
+    ],
+    content: `All form data in Markdown format`,
+  },
+  {
+    id: 4,
+    title: "Enrollment Form by Morpheus",
+    thumbnailImgSrc: "/images/filled-form.png",
+    createdBy: {
+      mailId: "morpheus@gmail.com",
+    },
+    createdAt: new Date(2025, 11, 27, 9, 9, 9),
+    lastModifiedAt: new Date(2025, 11, 31, 9, 9, 9),
+    lastOpenedAt: new Date(2026, 0, 4, 11, 11, 11),
+    owners: [
+      {
+        mailId: "morpheus@gmail.com",
+        lastModifiedAt: new Date(2025, 11, 31, 9, 9, 9),
+        lastOpenedAt: new Date(2025, 11, 31, 9, 9, 9),
+      },
+    ],
+    viewers: [
+      {
+        mailId: "trinity@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 1, 7, 31, 11),
+      },
+      {
+        mailId: "neo@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 4, 11, 11, 11),
+      },
+    ],
+    content: `All form data in Markdown format`,
+  },
+  {
+    id: 5,
+    title: "FAQ answered by Neo",
+    thumbnailImgSrc: "/images/filled-form.png",
+    createdBy: {
+      mailId: "neo@gmail.com",
+    },
+    createdAt: new Date(2026, 0, 16, 11, 11, 11),
+    lastModifiedAt: new Date(2026, 0, 18, 11, 11, 11),
+    lastOpenedAt: new Date(2026, 0, 18, 12, 30, 10),
+    owners: [
+      {
+        mailId: "neo@gmail.com",
+        lastModifiedAt: new Date(2026, 0, 18, 11, 11, 11),
+        lastOpenedAt: new Date(2026, 0, 17, 9, 9, 9),
+      },
+      {
+        mailId: "morpheus@gmail.com",
+        lastModifiedAt: new Date(2026, 0, 17, 9, 9, 9),
+        lastOpenedAt: new Date(2026, 0, 18, 12, 30, 10),
+      },
+    ],
+    viewers: [
+      {
+        mailId: "trinity@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 17, 7, 30, 12),
+      },
+      {
+        mailId: "jane.doe@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 17, 19, 25, 42),
+      },
+      {
+        mailId: "john.doe@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 17, 22, 14, 57),
+      },
+    ],
+    content: `All form data in Markdown format`,
+  },
+  {
+    id: 6,
+    title: "Feedback on Jane's Project",
+    thumbnailImgSrc: "/images/filled-form.png",
+    createdBy: {
+      mailId: "jane.doe@gmail.com",
+    },
+    createdAt: new Date(2026, 0, 15, 14, 17, 32),
+    lastModifiedAt: new Date(2026, 0, 16, 9, 25, 45),
+    lastOpenedAt: new Date(2026, 0, 18, 12, 10, 10),
+    owners: [
+      {
+        mailId: "jane.doe@gmail.com",
+        lastModifiedAt: new Date(2026, 0, 16, 9, 25, 45),
+        lastOpenedAt: new Date(2026, 0, 18, 12, 10, 10),
+      },
+    ],
+    viewers: [
+      {
+        mailId: "trinity@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 17, 17, 46, 12),
+      },
+      {
+        mailId: "neo@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 16, 19, 25, 42),
+      },
+      {
+        mailId: "morpheus@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 16, 22, 14, 57),
+      },
+    ],
+    content: `All form data in Markdown format`,
+  },
+  {
+    id: 7,
+    title: "Trinity's Poll",
+    thumbnailImgSrc: "/images/filled-form.png",
+    createdBy: {
+      mailId: "trinity@gmail.com",
+    },
+    createdAt: new Date(2025, 11, 24, 7, 30, 32),
+    lastModifiedAt: new Date(2026, 0, 5, 9, 25, 45),
+    lastOpenedAt: new Date(2026, 0, 8, 22, 10, 10),
+    owners: [
+      {
+        mailId: "trinity@gmail.com",
+        lastModifiedAt: new Date(2026, 0, 5, 9, 25, 45),
+        lastOpenedAt: new Date(2026, 0, 8, 22, 10, 10),
+      },
+    ],
+    viewers: [
+      {
+        mailId: "neo@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 5, 17, 46, 12),
+      },
+      {
+        mailId: "jane.doe@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 5, 19, 25, 42),
+      },
+      {
+        mailId: "morpheus@gmail.com",
+        lastOpenedAt: new Date(2026, 0, 5, 22, 14, 57),
+      },
+    ],
+    content: `All form data in Markdown format`,
+  },
 ];
 
 const currUserMailId = "jane.doe@gmail.com";
@@ -112,14 +279,14 @@ const displayAllFormsInGrid = (formData) => {
       <div class="card-body">
         <h6 class="card-title">${currFormData.title}</h6>
         <small class="card-text">${lastOpenedAt.getDate()} ${
-      months[lastOpenedAt.getMonth()]
-    } ${
-      lastOpenedAt.getFullYear() +
-      " at " +
-      lastOpenedAt.getHours() +
-      ":" +
-      lastOpenedAt.getMinutes()
-    }</small>
+          months[lastOpenedAt.getMonth()]
+        } ${
+          lastOpenedAt.getFullYear() +
+          " at " +
+          lastOpenedAt.getHours() +
+          ":" +
+          lastOpenedAt.getMinutes()
+        }</small>
       </div>
     </section>
   `;
@@ -160,14 +327,14 @@ const displayAllFormsInList = (formData) => {
             .map((currOwner) => currOwner.mailId.split("@")[0])
             .join(", ")}</td>
           <td class="align-middle">${lastOpenedAt.getDate()} ${
-      months[lastOpenedAt.getMonth()]
-    } ${
-      lastOpenedAt.getFullYear() +
-      " at " +
-      lastOpenedAt.getHours() +
-      ":" +
-      lastOpenedAt.getMinutes()
-    }</td>
+            months[lastOpenedAt.getMonth()]
+          } ${
+            lastOpenedAt.getFullYear() +
+            " at " +
+            lastOpenedAt.getHours() +
+            ":" +
+            lastOpenedAt.getMinutes()
+          }</td>
           <td class="align-middle">
             <button
               class="btn btn-outline-secondary rounded-circle border-0 px-3"
@@ -188,44 +355,44 @@ const formSortHandler = () => {
       filteredFormData.sort((formOne, formTwo) => {
         if (
           formOne.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
           formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           )
         ) {
           const formOneLastMod = new Date(
             formOne.owners.find(
-              (currOwner) => currOwner.mailId === currUserMailId
-            ).lastModifiedAt
+              (currOwner) => currOwner.mailId === currUserMailId,
+            ).lastModifiedAt,
           );
 
           const formTwoLastMod = new Date(
             formTwo.owners.find(
-              (currOwner) => currOwner.mailId === currUserMailId
-            ).lastModifiedAt
+              (currOwner) => currOwner.mailId === currUserMailId,
+            ).lastModifiedAt,
           );
 
           return formOneLastMod.valueOf() > formTwoLastMod.valueOf()
             ? -1
             : formTwoLastMod.valueOf() > formOneLastMod.valueOf()
-            ? +1
-            : NaN;
+              ? +1
+              : NaN;
         } else if (
           formOne.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
           formTwo.owners.find(
-            (currOwner) => currOwner.mailId !== currUserMailId
+            (currOwner) => currOwner.mailId !== currUserMailId,
           )
         ) {
           return -1;
         } else if (
           formOne.owners.find(
-            (currOwner) => currOwner.mailId !== currUserMailId
+            (currOwner) => currOwner.mailId !== currUserMailId,
           ) &&
           formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           )
         ) {
           return +1;
@@ -236,44 +403,44 @@ const formSortHandler = () => {
       filteredFormData.sort((formOne, formTwo) => {
         if (
           formOne.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
           formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           )
         ) {
           const formOneLastOpen = new Date(
             formOne.owners.find(
-              (currOwner) => currOwner.mailId === currUserMailId
-            ).lastOpenedAt
+              (currOwner) => currOwner.mailId === currUserMailId,
+            ).lastOpenedAt,
           );
 
           const formTwoLastOpen = new Date(
             formTwo.owners.find(
-              (currOwner) => currOwner.mailId === currUserMailId
-            ).lastOpenedAt
+              (currOwner) => currOwner.mailId === currUserMailId,
+            ).lastOpenedAt,
           );
 
           return formOneLastOpen.valueOf() > formTwoLastOpen.valueOf()
             ? -1
             : formTwoLastOpen.valueOf() > formOneLastOpen.valueOf()
-            ? +1
-            : NaN;
+              ? +1
+              : NaN;
         } else if (
           formOne.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
           formTwo.owners.find(
-            (currOwner) => currOwner.mailId !== currUserMailId
+            (currOwner) => currOwner.mailId !== currUserMailId,
           )
         ) {
           return -1;
         } else if (
           formOne.owners.find(
-            (currOwner) => currOwner.mailId !== currUserMailId
+            (currOwner) => currOwner.mailId !== currUserMailId,
           ) &&
           formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId
+            (currOwner) => currOwner.mailId === currUserMailId,
           )
         ) {
           return +1;
@@ -289,8 +456,8 @@ const formSortHandler = () => {
         return formOneLastMod.valueOf() > formTwoLastMod.valueOf()
           ? -1
           : formTwoLastMod.valueOf() > formOneLastMod.valueOf()
-          ? +1
-          : NaN;
+            ? +1
+            : NaN;
       });
 
       break;
@@ -302,8 +469,8 @@ const formSortHandler = () => {
         return formOneTitle === formTwoTitle
           ? NaN
           : formOneTitle > formTwoTitle
-          ? +1
-          : -1;
+            ? +1
+            : -1;
       });
       break;
   }
@@ -319,7 +486,7 @@ const formSearchHandler = () => {
       currForm.title
         .toString()
         .toLowerCase()
-        .includes(currFormSearch.toLowerCase())
+        .includes(currFormSearch.toLowerCase()),
     );
 
     formSearchBtn.classList.add("d-none");
@@ -379,14 +546,14 @@ formFilter.addEventListener("change", () => {
       filteredFormData = formData.filter((currForm) =>
         currForm.owners.find((currOwner) => currOwner.mailId === currUserMailId)
           ? currForm
-          : false
+          : false,
       );
       break;
     case "Not owned by me":
       filteredFormData = formData.filter((currForm) =>
         currForm.owners.find((currOwner) => currOwner.mailId === currUserMailId)
           ? false
-          : currForm
+          : currForm,
       );
       break;
   }
