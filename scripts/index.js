@@ -278,8 +278,16 @@ const displayAllFormsInGrid = (formData) => {
         class="card-img-top p-3 pb-0 w-50 mx-auto"
       />
       <div class="card-body">
-        <h6 class="card-title">${currFormData.title}</h6>
-        <small class="card-text">${lastOpenedAt.getDate()} ${
+        <div class="d-flex align-items-center">
+          <h6 class="card-title me-3 mb-1">${currFormData.title}</h6>
+          ${
+            currFormData.owners.length > 1
+              ? "<i class='fa-solid fa-user-group text-secondary'></i>"
+              : ""
+          }        
+        </div>
+        
+        <small class="card-text d-block mt-1">${lastOpenedAt.getDate()} ${
           months[lastOpenedAt.getMonth()]
         } ${
           lastOpenedAt.getFullYear() +
