@@ -263,14 +263,15 @@ const displayAllFormsInGrid = (formData) => {
   viewToggle.innerHTML = `<i class="fa-solid fa-list"></i>`;
   allFormsContainer.innerHTML = "";
   const allForms = document.createElement("div");
-  allForms.classList.add("row");
+  allForms.classList.add("row", "g-3");
 
   formData.map((currFormData) => {
     const lastOpenedAt = new Date(currFormData.lastOpenedAt);
     const currForm = document.createElement("div");
     currForm.classList.add("col-3");
-    currForm.innerHTML = `
-    <section class="card">
+    const formInfoCard = document.createElement("section");
+    formInfoCard.classList.add("card");
+    formInfoCard.innerHTML = `
       <img
         src=${currFormData.thumbnailImgSrc}
         alt="Form Thumbnail"
@@ -288,8 +289,16 @@ const displayAllFormsInGrid = (formData) => {
           lastOpenedAt.getMinutes()
         }</small>
       </div>
-    </section>
-  `;
+    `;
+
+    formInfoCard.addEventListener("mouseover", () =>
+      formInfoCard.classList.add("bg-body-secondary"),
+    );
+    formInfoCard.addEventListener("mouseout", () =>
+      formInfoCard.classList.remove("bg-body-secondary"),
+    );
+
+    currForm.appendChild(formInfoCard);
     allForms.appendChild(currForm);
   });
   allFormsContainer.appendChild(allForms);
