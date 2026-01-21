@@ -9,14 +9,16 @@ const formData = [
     createdAt: new Date(2025, 11, 20, 16, 23, 12),
     lastModifiedAt: new Date(2026, 0, 2, 11, 36, 45),
     lastOpenedAt: new Date(2026, 0, 6, 22, 12, 10),
-    owners: [
+    users: [
       {
         mailId: "john.doe@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 2, 11, 36, 45),
         lastOpenedAt: new Date(2026, 0, 6, 22, 12, 10),
       },
     ],
-    viewers: ["anybody"],
+    access: "public",
+    globalPerms: ["view", "comment"],
     content: `Form Markdown`,
   },
   {
@@ -27,34 +29,39 @@ const formData = [
       mailId: "john.doe@gmail.com",
     },
     createdAt: new Date(2025, 11, 12, 12, 12, 32),
-    lastModifiedAt: new Date(2026, 0, 3, 9, 25, 45),
-    lastOpenedAt: new Date(2026, 0, 8, 22, 10, 10),
-    owners: [
+    lastModifiedAt: new Date(2026, 0, 13, 9, 25, 45),
+    lastOpenedAt: new Date(2026, 0, 15, 22, 10, 10),
+    users: [
       {
         mailId: "john.doe@gmail.com",
+        perms: ["view", "comment", "modify"],
+        lastModifiedAt: new Date(2026, 0, 13, 9, 25, 45),
+        lastOpenedAt: new Date(2026, 0, 15, 22, 10, 10),
+      },
+      {
+        mailId: "jane.doe@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 2, 11, 36, 45),
         lastOpenedAt: new Date(2026, 0, 6, 22, 12, 10),
       },
       {
-        mailId: "jane.doe@gmail.com",
-        lastModifiedAt: new Date(2026, 0, 3, 9, 25, 45),
-        lastOpenedAt: new Date(2026, 0, 8, 22, 10, 10),
-      },
-    ],
-    viewers: [
-      {
         mailId: "trinity@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 5, 17, 46, 12),
       },
       {
         mailId: "neo@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 5, 19, 25, 42),
       },
       {
         mailId: "morpheus@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 5, 22, 14, 57),
       },
     ],
+    access: "private",
+    globalPerms: [],
     content: `All form data in Markdown format`,
   },
   {
@@ -67,28 +74,32 @@ const formData = [
     createdAt: new Date(2026, 0, 6, 14, 22, 52),
     lastModifiedAt: new Date(2026, 0, 10, 9, 25, 45),
     lastOpenedAt: new Date(2026, 0, 13, 22, 10, 10),
-    owners: [
+    users: [
       {
         mailId: "trinity@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 10, 9, 25, 45),
         lastOpenedAt: new Date(2026, 0, 13, 22, 10, 10),
       },
       {
         mailId: "jane.doe@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 7, 9, 25, 45),
         lastOpenedAt: new Date(2026, 0, 12, 22, 10, 10),
       },
-    ],
-    viewers: [
       {
         mailId: "john.doe@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 13, 17, 46, 12),
       },
       {
         mailId: "neo@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 11, 19, 25, 42),
       },
     ],
+    access: "private",
+    globalPerms: [],
     content: `All form data in Markdown format`,
   },
   {
@@ -101,23 +112,26 @@ const formData = [
     createdAt: new Date(2025, 11, 27, 9, 9, 9),
     lastModifiedAt: new Date(2025, 11, 31, 9, 9, 9),
     lastOpenedAt: new Date(2026, 0, 4, 11, 11, 11),
-    owners: [
+    users: [
       {
         mailId: "morpheus@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2025, 11, 31, 9, 9, 9),
         lastOpenedAt: new Date(2025, 11, 31, 9, 9, 9),
       },
-    ],
-    viewers: [
       {
         mailId: "trinity@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 1, 7, 31, 11),
       },
       {
         mailId: "neo@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 4, 11, 11, 11),
       },
     ],
+    access: "private",
+    globalPerms: [],
     content: `All form data in Markdown format`,
   },
   {
@@ -130,32 +144,32 @@ const formData = [
     createdAt: new Date(2026, 0, 16, 11, 11, 11),
     lastModifiedAt: new Date(2026, 0, 18, 11, 11, 11),
     lastOpenedAt: new Date(2026, 0, 18, 12, 30, 10),
-    owners: [
+    users: [
       {
         mailId: "neo@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 18, 11, 11, 11),
         lastOpenedAt: new Date(2026, 0, 17, 9, 9, 9),
       },
       {
         mailId: "morpheus@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 17, 9, 9, 9),
         lastOpenedAt: new Date(2026, 0, 18, 12, 30, 10),
       },
-    ],
-    viewers: [
       {
         mailId: "trinity@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 17, 7, 30, 12),
       },
       {
-        mailId: "jane.doe@gmail.com",
-        lastOpenedAt: new Date(2026, 0, 17, 19, 25, 42),
-      },
-      {
         mailId: "john.doe@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 17, 22, 14, 57),
       },
     ],
+    access: "private",
+    globalPerms: [],
     content: `All form data in Markdown format`,
   },
   {
@@ -168,27 +182,31 @@ const formData = [
     createdAt: new Date(2026, 0, 15, 14, 17, 32),
     lastModifiedAt: new Date(2026, 0, 16, 9, 25, 45),
     lastOpenedAt: new Date(2026, 0, 18, 12, 10, 10),
-    owners: [
+    users: [
       {
         mailId: "jane.doe@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 16, 9, 25, 45),
         lastOpenedAt: new Date(2026, 0, 18, 12, 10, 10),
       },
-    ],
-    viewers: [
       {
         mailId: "trinity@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 17, 17, 46, 12),
       },
       {
         mailId: "neo@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 16, 19, 25, 42),
       },
       {
         mailId: "morpheus@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 16, 22, 14, 57),
       },
     ],
+    access: "private",
+    globalPerms: [],
     content: `All form data in Markdown format`,
   },
   {
@@ -201,27 +219,31 @@ const formData = [
     createdAt: new Date(2025, 11, 24, 7, 30, 32),
     lastModifiedAt: new Date(2026, 0, 5, 9, 25, 45),
     lastOpenedAt: new Date(2026, 0, 8, 22, 10, 10),
-    owners: [
+    users: [
       {
         mailId: "trinity@gmail.com",
+        perms: ["view", "comment", "modify"],
         lastModifiedAt: new Date(2026, 0, 5, 9, 25, 45),
         lastOpenedAt: new Date(2026, 0, 8, 22, 10, 10),
       },
-    ],
-    viewers: [
       {
         mailId: "neo@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 5, 17, 46, 12),
       },
       {
         mailId: "jane.doe@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 5, 19, 25, 42),
       },
       {
         mailId: "morpheus@gmail.com",
+        perms: ["view", "comment"],
         lastOpenedAt: new Date(2026, 0, 5, 22, 14, 57),
       },
     ],
+    access: "private",
+    globalPerms: [],
     content: `All form data in Markdown format`,
   },
 ];
@@ -266,6 +288,9 @@ const displayAllFormsInGrid = (formData) => {
   allForms.classList.add("row", "g-3");
 
   formData.map((currFormData) => {
+    const currFormOwners = currFormData.users.filter((user) =>
+      user.perms.includes("modify"),
+    );
     const lastOpenedAt = new Date(currFormData.lastOpenedAt);
     const currForm = document.createElement("div");
     currForm.classList.add("col-3");
@@ -281,7 +306,7 @@ const displayAllFormsInGrid = (formData) => {
         <div class="d-flex align-items-center">
           <h6 class="card-title me-3 mb-1">${currFormData.title}</h6>
           ${
-            currFormData.owners.length > 1
+            currFormOwners.length > 1
               ? "<i class='fa-solid fa-user-group text-secondary'></i>"
               : ""
           }        
@@ -327,6 +352,9 @@ const displayAllFormsInList = (formData) => {
       </tr>
     </thead>`;
   formData.map((currFormData) => {
+    const currFormOwners = currFormData.users.filter((user) =>
+      user.perms.includes("modify"),
+    );
     const lastOpenedAt = new Date(currFormData.lastOpenedAt);
     allForms.innerHTML += `
       <tbody>
@@ -335,12 +363,12 @@ const displayAllFormsInList = (formData) => {
             <i class="fa-solid fa-list mt-1"></i>
             <h6 class="ms-5 me-3 mb-1 mt-1">${currFormData.title}</h6>
             ${
-              currFormData.owners.length > 1
+              currFormOwners.length > 1
                 ? "<i class='fa-solid fa-user-group text-secondary'></i>"
                 : ""
             }
             </td>
-          <td class="align-middle">${currFormData.owners
+          <td class="align-middle">${currFormOwners
             .map((currOwner) => currOwner.mailId.split("@")[0])
             .join(", ")}</td>
           <td class="align-middle">${lastOpenedAt.getDate()} ${
@@ -370,22 +398,27 @@ const formSortHandler = () => {
   switch (currSorting) {
     case "Last modified by me":
       filteredFormData.sort((formOne, formTwo) => {
+        const formOneOwners = formOne.users.filter((user) =>
+          user.perms.includes("modify"),
+        );
+        const formTwoOwners = formTwo.users.filter((user) =>
+          user.perms.includes("modify"),
+        );
+
         if (
-          formOne.owners.find(
+          formOneOwners.find(
             (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
-          formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId,
-          )
+          formTwoOwners.find((currOwner) => currOwner.mailId === currUserMailId)
         ) {
           const formOneLastMod = new Date(
-            formOne.owners.find(
+            formOneOwners.find(
               (currOwner) => currOwner.mailId === currUserMailId,
             ).lastModifiedAt,
           );
 
           const formTwoLastMod = new Date(
-            formTwo.owners.find(
+            formTwoOwners.find(
               (currOwner) => currOwner.mailId === currUserMailId,
             ).lastModifiedAt,
           );
@@ -396,21 +429,17 @@ const formSortHandler = () => {
               ? +1
               : NaN;
         } else if (
-          formOne.owners.find(
+          formOneOwners.find(
             (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
-          formTwo.owners.find(
-            (currOwner) => currOwner.mailId !== currUserMailId,
-          )
+          formTwoOwners.find((currOwner) => currOwner.mailId !== currUserMailId)
         ) {
           return -1;
         } else if (
-          formOne.owners.find(
+          formOneOwners.find(
             (currOwner) => currOwner.mailId !== currUserMailId,
           ) &&
-          formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId,
-          )
+          formTwoOwners.find((currOwner) => currOwner.mailId === currUserMailId)
         ) {
           return +1;
         } else return NaN;
@@ -418,22 +447,23 @@ const formSortHandler = () => {
       break;
     case "Last opened by me":
       filteredFormData.sort((formOne, formTwo) => {
+        const formOneUsers = formOne.users;
+        const formTwoUsers = formTwo.users;
+
         if (
-          formOne.owners.find(
+          formOneUsers.find(
             (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
-          formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId,
-          )
+          formTwoUsers.find((currOwner) => currOwner.mailId === currUserMailId)
         ) {
           const formOneLastOpen = new Date(
-            formOne.owners.find(
+            formOneUsers.find(
               (currOwner) => currOwner.mailId === currUserMailId,
             ).lastOpenedAt,
           );
 
           const formTwoLastOpen = new Date(
-            formTwo.owners.find(
+            formTwoUsers.find(
               (currOwner) => currOwner.mailId === currUserMailId,
             ).lastOpenedAt,
           );
@@ -444,21 +474,17 @@ const formSortHandler = () => {
               ? +1
               : NaN;
         } else if (
-          formOne.owners.find(
+          formOneUsers.find(
             (currOwner) => currOwner.mailId === currUserMailId,
           ) &&
-          formTwo.owners.find(
-            (currOwner) => currOwner.mailId !== currUserMailId,
-          )
+          formTwoUsers.find((currOwner) => currOwner.mailId !== currUserMailId)
         ) {
           return -1;
         } else if (
-          formOne.owners.find(
+          formOneUsers.find(
             (currOwner) => currOwner.mailId !== currUserMailId,
           ) &&
-          formTwo.owners.find(
-            (currOwner) => currOwner.mailId === currUserMailId,
-          )
+          formTwoUsers.find((currOwner) => currOwner.mailId === currUserMailId)
         ) {
           return +1;
         } else return NaN;
@@ -561,14 +587,18 @@ formFilter.addEventListener("change", () => {
       break;
     case "Owned by me":
       filteredFormData = formData.filter((currForm) =>
-        currForm.owners.find((currOwner) => currOwner.mailId === currUserMailId)
+        currForm.users
+          .filter((user) => user.perms.includes("modify"))
+          .find((currOwner) => currOwner.mailId === currUserMailId)
           ? currForm
           : false,
       );
       break;
     case "Not owned by me":
       filteredFormData = formData.filter((currForm) =>
-        currForm.owners.find((currOwner) => currOwner.mailId === currUserMailId)
+        currForm.users
+          .filter((user) => user.perms.includes("modify"))
+          .find((currOwner) => currOwner.mailId === currUserMailId)
           ? false
           : currForm,
       );
